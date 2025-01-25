@@ -19,7 +19,7 @@
     "michaeldrennen/local-file": "^2.0",
     "curl/curl": "^2.2",
     "fabpot/goutte": "^4.0",
-    "nesbot/carbon": "^2.28",
+    "nesbot/carbon": "^2.28 || ^3.0",
     "illuminate/support": "^10.0 || ^11.0", 
     "illuminate/routing": "^10.0 || ^11.0",
     "illuminate/database": "^10.0 || ^11.0"
