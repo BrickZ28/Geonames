@@ -12,11 +12,11 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/BrickZ28/remote-file.git"
+            "url": "https://github.com/BrickZ28/RemoteFile.git"
         },
         {
             "type": "vcs",
-            "url": "https://github.com/BrickZ28/local-file.git"
+            "url": "https://github.com/BrickZ28/LocalFile.git"
         }
     ],
     "require": {
