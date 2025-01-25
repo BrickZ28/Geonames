@@ -12,11 +12,11 @@
   "repositories": [
     {
         "type": "vcs",
-        "url": "https://github.com/YourGitHubUsername/remote-file"
+        "url": "https://github.com/brickz28/remote-file"
     },
     {
         "type": "vcs",
-        "url": "https://github.com/YourGitHubUsername/local-file"
+        "url": "https://github.com/brickz28/local-file"
     }
 ],
 "require": {
@@ -36,8 +36,8 @@
     "ext-pdo": "*",
     "ext-curl": "*",
     "laravel/framework": "^11.0", 
-    "michaeldrennen/remote-file": "^2.0",
-    "michaeldrennen/local-file": "^2.0",
+    "brickz28/remote-file": "^2.0",
+    "brickz28/local-file": "^2.0",
     "curl/curl": "^2.2",
     "fabpot/goutte": "^4.0",
     "nesbot/carbon": "^2.28 || ^3.0",
