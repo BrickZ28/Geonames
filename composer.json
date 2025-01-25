@@ -1,71 +1,55 @@
 {
-  "name": "brickz28/geonames",
-  "description": "A Laravel (php) package that interfaces with the geolocation services on geonames.org.",
-  "type": "library",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Michael Drennen",
-      "email": "michaeldrennen74@gmail.com"
-    }
-  ],
-  "repositories": [
-    {
-        "type": "vcs",
-        "url": "https://github.com/brickz28/remote-file"
+    "name": "brickz28/geonames",
+    "description": "A Laravel (php) package that interfaces with the geolocation services on geonames.org.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Drennen",
+            "email": "michaeldrennen74@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/BrickZ28/remote-file.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/BrickZ28/local-file.git"
+        }
+    ],
+    "require": {
+        "php": "^8.0 || ^8.4",
+        "michaeldrennen/remote-file": "dev-main",
+        "michaeldrennen/local-file": "dev-main",
+        "laravel/framework": "^11.0",
+        "nesbot/carbon": "^2.28 || ^3.0",
+        "illuminate/support": "^10.0 || ^11.0",
+        "illuminate/routing": "^10.0 || ^11.0",
+        "illuminate/database": "^10.0 || ^11.0"
     },
-    {
-        "type": "vcs",
-        "url": "https://github.com/brickz28/local-file"
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "orchestra/testbench": "^8.0",
+        "php-coveralls/php-coveralls": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "MichaelDrennen\\Geonames\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MichaelDrennen\\Geonames\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MichaelDrennen\\Geonames\\GeonamesServiceProvider"
+            ]
+        }
     }
-],
-"require": {
-    "php": "^8.0 || ^8.4",
-    "michaeldrennen/remote-file": "dev-main",
-    "michaeldrennen/local-file": "dev-main",
-    "laravel/framework": "^11.0",
-    "nesbot/carbon": "^2.28 || ^3.0",
-    "illuminate/support": "^10.0 || ^11.0",
-    "illuminate/routing": "^10.0 || ^11.0",
-    "illuminate/database": "^10.0 || ^11.0"
-},
-
-  "require": {
-    "php": "^8.0 || ^8.1 || ^8.2 || ^8.4",
-    "ext-intl": "*",
-    "ext-pdo": "*",
-    "ext-curl": "*",
-    "laravel/framework": "^11.0", 
-    "brickz28/remote-file": "^2.0",
-    "brickz28/local-file": "^2.0",
-    "curl/curl": "^2.2",
-    "fabpot/goutte": "^4.0",
-    "nesbot/carbon": "^2.28 || ^3.0",
-    "illuminate/support": "^10.0 || ^11.0", 
-    "illuminate/routing": "^10.0 || ^11.0",
-    "illuminate/database": "^10.0 || ^11.0"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^10.0", 
-    "orchestra/testbench": "^8.0", 
-    "php-coveralls/php-coveralls": "^2.2"
-  },
-  "autoload": {
-    "psr-4": {
-      "MichaelDrennen\\Geonames\\": "src"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "MichaelDrennen\\Geonames\\Tests\\": "tests/"
-    }
-  },
-  "minimum-stability": "stable",
-  "extra": {
-    "laravel": {
-      "providers": [
-        "MichaelDrennen\\Geonames\\GeonamesServiceProvider"
-      ]
-    }
-  }
 }
