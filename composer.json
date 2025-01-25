@@ -1,5 +1,5 @@
 {
-  "name": "michaeldrennen/geonames",
+  "name": "brickz28/geonames",
   "description": "A Laravel (php) package that interfaces with the geolocation services on geonames.org.",
   "type": "library",
   "license": "MIT",
