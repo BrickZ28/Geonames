@@ -1,6 +1,9 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Tests;
+namespace Geonames\Tests;
+
+
+use Geonames\Models\IsoLanguageCode;
 
 class InstallIsoLanguageCodeTest extends BaseInstallTestCase {
 
@@ -11,10 +14,10 @@ class InstallIsoLanguageCodeTest extends BaseInstallTestCase {
      */
     public function testIsoLanguageCodeCommand() {
         $this->artisan( 'geonames:iso-language-code', [ '--connection' => $this->DB_CONNECTION ] );
-        $isoLanguageCodes = \MichaelDrennen\Geonames\Models\IsoLanguageCode::all();
+        $isoLanguageCodes = IsoLanguageCode::all();
         $this->assertInstanceOf( \Illuminate\Support\Collection::class, $isoLanguageCodes );
         $this->assertNotEmpty( $isoLanguageCodes );
-        $this->assertInstanceOf( \MichaelDrennen\Geonames\Models\IsoLanguageCode::class, $isoLanguageCodes->first() );
+        $this->assertInstanceOf( IsoLanguageCode::class, $isoLanguageCodes->first() );
     }
 
 

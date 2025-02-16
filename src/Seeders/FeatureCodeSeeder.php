@@ -4,7 +4,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Curl\Curl;
-use MichaelDrennen\Geonames\Models\Log;
+use Geonames\Models\Log;
 
 class FeatureCodeSeeder extends Seeder {
 

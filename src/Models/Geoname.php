@@ -1,13 +1,13 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Models;
+namespace Geonames\Models;
 
 use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use MichaelDrennen\Geonames\Events\GeonameUpdated;
-use MichaelDrennen\Geonames\Repositories\Admin1CodeRepository;
-use MichaelDrennen\Geonames\Repositories\Admin2CodeRepository;
+use Geonames\Events\GeonameUpdated;
+use Geonames\Repositories\Admin1CodeRepository;
+use Geonames\Repositories\Admin2CodeRepository;
 
 class Geoname extends Model {
     protected $table = 'geonames';

@@ -1,17 +1,18 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Console;
+namespace Geonames\Console;
 
 use Exception;
+use Geonames\Models\IsoLanguageCodeWorking;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use MichaelDrennen\Geonames\Models\GeoSetting;
-use MichaelDrennen\Geonames\Models\Log;
+use Geonames\Models\GeoSetting;
+use Geonames\Models\Log;
 
 /**
  * Class IsoLanguageCodes
  *
- * @package MichaelDrennen\Geonames\Console
+ * @package Geonames\Console
  */
 class IsoLanguageCode extends AbstractCommand {
 
@@ -239,7 +240,7 @@ class IsoLanguageCode extends AbstractCommand {
         $slices = array_chunk( $rows, $slicer );
         foreach ( $slices as $slice ) {
             try {
-                \MichaelDrennen\Geonames\Models\IsoLanguageCodeWorking::insert( $slice );
+                IsoLanguageCodeWorking::insert( $slice );
             } catch ( \Exception $exception ) {
                 Log::error( '',
                             $exception->getMessage(),

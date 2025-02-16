@@ -1,9 +1,9 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Repositories;
+namespace Geonames\Repositories;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use MichaelDrennen\Geonames\Models\FeatureClass;
+use Geonames\Models\FeatureClass;
 
 class FeatureClassRepository {
 

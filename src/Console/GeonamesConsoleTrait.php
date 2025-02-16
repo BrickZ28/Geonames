@@ -1,15 +1,15 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Console;
+namespace Geonames\Console;
 
 use Curl\Curl;
 use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use MichaelDrennen\Geonames\Models\GeoSetting;
-use MichaelDrennen\Geonames\Models\Log;
-use MichaelDrennen\RemoteFile\RemoteFile;
+use Geonames\Models\GeoSetting;
+use Geonames\Models\Log;
+use RemoteFile\RemoteFile;
 use Symfony\Component\DomCrawler\Crawler;
 use ZipArchive;
 

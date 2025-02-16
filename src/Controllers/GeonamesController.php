@@ -1,10 +1,10 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Controllers;
+namespace Geonames\Controllers;
 
 use Illuminate\Http\Request;
 use Locale;
-use MichaelDrennen\Geonames\Repositories\GeonameRepository;
+use Geonames\Repositories\GeonameRepository;
 
 class GeonamesController {
 

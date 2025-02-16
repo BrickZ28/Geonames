@@ -1,11 +1,11 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Tests;
+namespace Geonames\Tests;
 
 use Illuminate\Foundation\Application;
 use PDO;
 use Orchestra\Testbench\TestCase;
-use MichaelDrennen\Geonames\GeonamesServiceProvider;
+use Geonames\GeonamesServiceProvider;
 
 abstract class AbstractGlobalTestCase extends TestCase {
 

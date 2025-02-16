@@ -1,11 +1,11 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Console;
+namespace Geonames\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
-use MichaelDrennen\Geonames\Models\GeoSetting;
-use MichaelDrennen\Geonames\Models\Log;
+use Geonames\Models\GeoSetting;
+use Geonames\Models\Log;
 
 
 class FeatureClass extends AbstractCommand {

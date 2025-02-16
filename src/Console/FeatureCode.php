@@ -1,17 +1,17 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Console;
+namespace Geonames\Console;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use MichaelDrennen\Geonames\Models\GeoSetting;
-use MichaelDrennen\Geonames\Models\Log;
+use Geonames\Models\GeoSetting;
+use Geonames\Models\Log;
 
 /**
  * Class FeatureCode
  *
- * @package MichaelDrennen\Geonames\Console
+ * @package Geonames\Console
  */
 class FeatureCode extends AbstractCommand {
 

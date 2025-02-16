@@ -1,12 +1,12 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Models;
+namespace Geonames\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Log
- * @package MichaelDrennen\Geonames\Models
+ * @package Geonames\Models
  * TODO perhaps write errors to a flat file as well, incase the error is database related... right?
  */
 class Log extends Model {

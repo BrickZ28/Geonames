@@ -1,8 +1,8 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Tests;
+namespace Geonames\Tests;
 
-use MichaelDrennen\Geonames\Models\GeoSetting;
+use Geonames\Models\GeoSetting;
 
 class InstallGeoSettingTest extends BaseInstallTestCase {
 

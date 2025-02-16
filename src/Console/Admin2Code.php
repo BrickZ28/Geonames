@@ -1,19 +1,19 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Console;
+namespace Geonames\Console;
 
 use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
-use MichaelDrennen\Geonames\Models\GeoSetting;
-use MichaelDrennen\Geonames\Models\Log;
-use MichaelDrennen\Geonames\Models\Admin2Code as Admin2CodeModel;
-use MichaelDrennen\LocalFile\LocalFile;
+use Geonames\Models\GeoSetting;
+use Geonames\Models\Log;
+use Geonames\Models\Admin2Code as Admin2CodeModel;
+use LocalFile\LocalFile;
 
 /**
  * Class Admin2Code
  *
- * @package MichaelDrennen\Geonames\Console
+ * @package Geonames\Console
  */
 class Admin2Code extends AbstractCommand {
 
@@ -122,7 +122,7 @@ class Admin2Code extends AbstractCommand {
      *
      * @param string $localFilePath
      *
-     * @throws \MichaelDrennen\LocalFile\Exceptions\UnableToOpenFile
+     * @throws LocalFile\Exceptions\UnableToOpenFile
      */
     protected function insertWithEloquent( string $localFilePath ) {
         $numLines = LocalFile::lineCount( $localFilePath );

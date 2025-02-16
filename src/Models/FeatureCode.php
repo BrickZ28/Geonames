@@ -1,6 +1,6 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Models;
+namespace Geonames\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class FeatureCode extends Model {

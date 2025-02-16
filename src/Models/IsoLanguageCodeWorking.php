@@ -1,6 +1,6 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Models;
+namespace Geonames\Models;
 
 class IsoLanguageCodeWorking extends IsoLanguageCode {
 

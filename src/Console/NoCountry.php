@@ -1,17 +1,17 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Console;
+namespace Geonames\Console;
 
 use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 
-use MichaelDrennen\Geonames\Models\GeoSetting;
-use MichaelDrennen\Geonames\Models\Log;
+use Geonames\Models\GeoSetting;
+use Geonames\Models\Log;
 
 /**
  * Class NoCountry
- * @package MichaelDrennen\Geonames\Console
+ * @package Geonames\Console
  */
 class NoCountry extends AbstractCommand {
 

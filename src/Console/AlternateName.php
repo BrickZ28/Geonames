@@ -1,21 +1,21 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Console;
+namespace Geonames\Console;
 
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use MichaelDrennen\Geonames\Models\GeoSetting;
-use MichaelDrennen\Geonames\Models\Log;
-use MichaelDrennen\LocalFile\LocalFile;
-use MichaelDrennen\Geonames\Models\AlternateNamesWorking;
+use Geonames\Models\GeoSetting;
+use Geonames\Models\Log;
+use LocalFile\LocalFile;
+use Geonames\Models\AlternateNamesWorking;
 
 /**
  * Class AlternateName
  *
- * @package MichaelDrennen\Geonames\Console
+ * @package Geonames\Console
  */
 class AlternateName extends AbstractCommand {
 
@@ -448,7 +448,7 @@ class AlternateName extends AbstractCommand {
                 $isColloquial    = empty( $fields[ 6 ] ) ? FALSE : $fields[ 6 ];
                 $isHistoric      = empty( $fields[ 7 ] ) ? FALSE : $fields[ 7 ];
 
-                $alternateName = \MichaelDrennen\Geonames\Models\AlternateNamesWorking::on( $this->connectionName )
+                $alternateName = Geonames\Models\AlternateNamesWorking::on( $this->connectionName )
                                                                                       ->firstOrCreate(
                     [ 'alternateNameId' => $alternateNameId ],
                     [

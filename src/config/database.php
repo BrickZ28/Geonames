@@ -34,7 +34,7 @@ return [
 
     'connections' => [
         'geonames' => [
-            'driver'      => env( 'DB_GEONAMES_DRIVER', 'mysql' ),
+            'driver'      => env( 'DB_GEONAMES_DRIVER', 'sqlite' ),
             'host'        => env( 'DB_GEONAMES_HOST', '127.0.0.1' ),
             'port'        => env( 'DB_GEONAMES_PORT', 3306 ),
             'database'    => env( 'DB_GEONAMES_DATABASE', 'geonames' ),

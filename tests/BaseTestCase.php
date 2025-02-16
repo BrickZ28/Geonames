@@ -1,6 +1,6 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Tests;
+namespace Geonames\Tests;
 
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Foundation\Testing\RefreshDatabase;

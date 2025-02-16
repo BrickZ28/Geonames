@@ -1,9 +1,9 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Console;
+namespace Geonames\Console;
 
 use Illuminate\Console\Command;
-use MichaelDrennen\Geonames\Models\GeoSetting;
+use Geonames\Models\GeoSetting;
 
 class Status extends Command {
 

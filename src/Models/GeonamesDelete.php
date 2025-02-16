@@ -1,9 +1,9 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Models;
+namespace Geonames\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use MichaelDrennen\Geonames\Events\GeonameDeleted;
+use Geonames\Events\GeonameDeleted;
 
 class GeonamesDelete extends Model {
     protected $table = 'geonames_deletes';

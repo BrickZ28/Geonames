@@ -1,11 +1,11 @@
 <?php
-namespace MichaelDrennen\Geonames\Observers;
+namespace Geonames\Observers;
 
-use MichaelDrennen\Geonames\Geoname;
+use Geonames\Geoname;
 
 /**
  * Class GeonameObserver
- * @package MichaelDrennen\Geonames\Observers
+ * @package Geonames\Observers
  */
 class GeonameObserver {
     /**

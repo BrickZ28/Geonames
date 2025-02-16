@@ -1,9 +1,9 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Repositories;
+namespace Geonames\Repositories;
 
 use Illuminate\Support\Collection;
-use MichaelDrennen\Geonames\Models\Geoname;
+use Geonames\Models\Geoname;
 
 
 class GeonameRepository {

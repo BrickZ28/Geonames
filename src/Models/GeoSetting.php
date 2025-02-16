@@ -1,6 +1,6 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Models;
+namespace Geonames\Models;
 
 use Carbon\Carbon;
 use Exception;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\File;
 /**
  * Class GeoSetting
  *
- * @package MichaelDrennen\Geonames
+ * @package Geonames
  */
 class GeoSetting extends Model {
 
@@ -385,7 +385,7 @@ class GeoSetting extends Model {
             throw new Exception( "The storage path at '" . $path . "' exists but we can't write to it." );
         }
 
-        if ( mkdir( $path, 0700, TRUE ) ) {
+        if (mkdir($path, 0700, TRUE) || is_dir($path)) {
             return $path;
         }
 

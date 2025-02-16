@@ -18,7 +18,7 @@ composer require michaeldrennen/geonames
 And then add `geonames` provider to `providers` array in `app.php` config file:
 
 ```php
-MichaelDrennen\Geonames\GeonamesServiceProvider::class,
+Geonames\GeonamesServiceProvider::class,
 ```
 
 After that, Run migrate command:

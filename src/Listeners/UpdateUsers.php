@@ -1,7 +1,7 @@
 <?php
-namespace MichaelDrennen\Geonames\Listeners;
+namespace Geonames\Listeners;
 
-use MichaelDrennen\Geonames\Events\GeonameUpdated;
+use Geonames\Events\GeonameUpdated;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 

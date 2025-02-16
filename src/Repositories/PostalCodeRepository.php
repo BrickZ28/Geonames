@@ -1,10 +1,10 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Repositories;
+namespace Geonames\Repositories;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use MichaelDrennen\Geonames\Models\PostalCode;
+use Geonames\Models\PostalCode;
 
 
 class PostalCodeRepository {

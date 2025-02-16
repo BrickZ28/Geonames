@@ -1,14 +1,14 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Console;
+namespace Geonames\Console;
 
 use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use MichaelDrennen\Geonames\Models\GeoSetting;
-use MichaelDrennen\Geonames\Models\Log;
-use MichaelDrennen\LocalFile\LocalFile;
+use Geonames\Models\GeoSetting;
+use Geonames\Models\Log;
+use LocalFile\LocalFile;
 
 
 class InsertGeonames extends AbstractCommand {
@@ -407,7 +407,7 @@ SET created_at=NOW(),updated_at=null";
 
     /**
      * @param $localFilePath
-     * @throws \MichaelDrennen\LocalFile\Exceptions\UnableToOpenFile
+     * @throws \\LocalFile\Exceptions\UnableToOpenFile
      */
     protected function insertGeonamesWithEloquent( $localFilePath ) {
         $this->line( "\nStarting to insert the records found in " . $localFilePath );
@@ -438,7 +438,7 @@ SET created_at=NOW(),updated_at=null";
             $this->comment( "Split the insert file into " . $numChunks . " chuncks of " . self::ROWS_TO_INSERT_AT_ONCE . " rows per chunk." );
             $bar = $this->output->createProgressBar( $numChunks );
             foreach ( $chunkedRows as $rowsToInsert ):
-                \MichaelDrennen\Geonames\Models\GeonameWorking::insert( $rowsToInsert );
+                Geonames\Models\GeonameWorking::insert( $rowsToInsert );
                 $bar->advance();
             endforeach;
             $bar->finish();

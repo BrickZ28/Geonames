@@ -1,10 +1,11 @@
 <?php
 
-namespace MichaelDrennen\Geonames;
+namespace Geonames;
 
 use Illuminate\Console\Scheduling\Schedule;
+use Illuminate\Support\ServiceProvider;
 
-class GeonamesServiceProvider extends \Illuminate\Support\ServiceProvider {
+class GeonamesServiceProvider extends ServiceProvider {
 
 
     /**

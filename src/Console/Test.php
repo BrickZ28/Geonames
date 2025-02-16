@@ -1,13 +1,13 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Console;
+namespace Geonames\Console;
 
 use Illuminate\Console\Command;
-use MichaelDrennen\Geonames\Models\BaseTrait;
-use MichaelDrennen\Geonames\Models\GeoSetting;
+use Geonames\Models\BaseTrait;
+use Geonames\Models\GeoSetting;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
-use MichaelDrennen\Geonames\Models\Log;
+use Geonames\Models\Log;
 
 class Test extends Command {
 

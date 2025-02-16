@@ -1,9 +1,21 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Tests;
+namespace Geonames\Tests;
 
 
-use MichaelDrennen\Geonames\Models\Geoname;
+use Geonames\Models\Admin1Code;
+use Geonames\Models\Admin2Code;
+use Geonames\Models\FeatureClass;
+use Geonames\Models\Geoname;
+use Geonames\Models\GeoSetting;
+use Geonames\Repositories\Admin1CodeRepository;
+use Geonames\Repositories\Admin2CodeRepository;
+use Geonames\Repositories\AlternateNameRepository;
+use Geonames\Repositories\FeatureClassRepository;
+use Geonames\Repositories\GeonameRepository;
+use Geonames\Repositories\IsoLanguageCodeRepository;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Collection;
 
 class RepositoryTest extends AbstractGlobalTestCase {
 
@@ -51,7 +63,7 @@ class RepositoryTest extends AbstractGlobalTestCase {
      *
      */
     protected function getStorageDirFromDatabase() {
-        $dir = \MichaelDrennen\Geonames\Models\GeoSetting::getStorage();
+        $dir = GeoSetting::getStorage();
         $this->assertEquals( $dir, 'geonames' );
     }
 
@@ -60,14 +72,14 @@ class RepositoryTest extends AbstractGlobalTestCase {
      *
      */
     protected function admin1Code() {
-        $repo       = new \MichaelDrennen\Geonames\Repositories\Admin1CodeRepository();
+        $repo       = new Admin1CodeRepository();
         $admin1Code = $repo->getByCompositeKey( 'AD', '06' );
-        $this->assertInstanceOf( \MichaelDrennen\Geonames\Models\Admin1Code::class, $admin1Code );
+        $this->assertInstanceOf( Admin1Code::class, $admin1Code );
 
         try {
             $repo->getByCompositeKey( 'XX', '00' ); // Does not exist.
         } catch ( \Exception $exception ) {
-            $this->assertInstanceOf( \Illuminate\Database\Eloquent\ModelNotFoundException::class, $exception );
+            $this->assertInstanceOf( ModelNotFoundException::class, $exception );
         }
     }
 
@@ -75,14 +87,14 @@ class RepositoryTest extends AbstractGlobalTestCase {
      *
      */
     protected function admin2Code() {
-        $repo       = new \MichaelDrennen\Geonames\Repositories\Admin2CodeRepository();
+        $repo       = new Admin2CodeRepository();
         $admin2Code = $repo->getByCompositeKey( 'AF', '08', 609 );
-        $this->assertInstanceOf( \MichaelDrennen\Geonames\Models\Admin2Code::class, $admin2Code );
+        $this->assertInstanceOf( Admin2Code::class, $admin2Code );
 
         try {
             $repo->getByCompositeKey( 'XX', '00', 000 ); // Does not exist.
         } catch ( \Exception $exception ) {
-            $this->assertInstanceOf( \Illuminate\Database\Eloquent\ModelNotFoundException::class, $exception );
+            $this->assertInstanceOf( ModelNotFoundException::class, $exception );
         }
     }
 
@@ -91,21 +103,21 @@ class RepositoryTest extends AbstractGlobalTestCase {
      *
      */
     protected function alternateName() {
-        $repo           = new \MichaelDrennen\Geonames\Repositories\AlternateNameRepository();
+        $repo           = new AlternateNameRepository();
         $alternateNames = $repo->getByGeonameId( 7500737 );
-        $this->assertInstanceOf( \Illuminate\Support\Collection::class, $alternateNames );
+        $this->assertInstanceOf( Collection::class, $alternateNames );
         $this->assertNotEmpty( $alternateNames );
 
 
         // Should be an empty Collection
         $alternateNames = $repo->getByGeonameId( 0 );
-        $this->assertInstanceOf( \Illuminate\Support\Collection::class, $alternateNames );
+        $this->assertInstanceOf( Collection::class, $alternateNames );
         $this->assertEmpty( $alternateNames );
 
         try {
             $repo->getByGeonameId( 0 ); // Does not exist.
         } catch ( \Exception $exception ) {
-            $this->assertInstanceOf( \Illuminate\Database\Eloquent\ModelNotFoundException::class, $exception );
+            $this->assertInstanceOf( ModelNotFoundException::class, $exception );
         }
     }
 
@@ -114,9 +126,9 @@ class RepositoryTest extends AbstractGlobalTestCase {
      *
      */
     protected function featureClass() {
-        $repo         = new \MichaelDrennen\Geonames\Repositories\FeatureClassRepository();
+        $repo         = new FeatureClassRepository();
         $featureClass = $repo->getById( 'R' );
-        $this->assertInstanceOf( \MichaelDrennen\Geonames\Models\FeatureClass::class, $featureClass );
+        $this->assertInstanceOf( FeatureClass::class, $featureClass );
 
         $featureClasses = $repo->all();
         $this->assertNotEmpty( $featureClasses );
@@ -124,15 +136,15 @@ class RepositoryTest extends AbstractGlobalTestCase {
         try {
             $repo->getById( 'DOESNOTEXIST' ); // Does not exist.
         } catch ( \Exception $exception ) {
-            $this->assertInstanceOf( \Illuminate\Database\Eloquent\ModelNotFoundException::class, $exception );
+            $this->assertInstanceOf( ModelNotFoundException::class, $exception );
         }
     }
 
 
     protected function isoLanguageCode() {
-        $repo             = new \MichaelDrennen\Geonames\Repositories\IsoLanguageCodeRepository();
+        $repo             = new IsoLanguageCodeRepository();
         $isoLanguageCodes = $repo->all();
-        $this->assertInstanceOf( \Illuminate\Support\Collection::class, $isoLanguageCodes );
+        $this->assertInstanceOf( Collection::class, $isoLanguageCodes );
         $this->assertNotEmpty( $isoLanguageCodes );
     }
 
@@ -142,29 +154,29 @@ class RepositoryTest extends AbstractGlobalTestCase {
      *
      */
     protected function geoname() {
-        $repo = new \MichaelDrennen\Geonames\Repositories\GeonameRepository();
+        $repo = new GeonameRepository();
 
         $geonames = $repo->getCitiesNotFromCountryStartingWithTerm( 'US', "ka" );
-        $this->assertInstanceOf( \Illuminate\Support\Collection::class, $geonames );
+        $this->assertInstanceOf( Collection::class, $geonames );
         $this->assertGreaterThan( 0, $geonames->count() );
-        $this->assertInstanceOf( \MichaelDrennen\Geonames\Models\Geoname::class, $geonames->first() );
+        $this->assertInstanceOf( Geoname::class, $geonames->first() );
 
 
         $geonames = $repo->getSchoolsFromCountryStartingWithTerm( 'UZ', "uc" );
-        $this->assertInstanceOf( \Illuminate\Support\Collection::class, $geonames );
+        $this->assertInstanceOf( Collection::class, $geonames );
         $this->assertGreaterThan( 0, $geonames->count() );
-        $this->assertInstanceOf( \MichaelDrennen\Geonames\Models\Geoname::class, $geonames->first() );
+        $this->assertInstanceOf( Geoname::class, $geonames->first() );
 
 
         $geonames = $repo->getCitiesFromCountryStartingWithTerm( 'UZ', 'ja' );
-        $this->assertInstanceOf( \Illuminate\Support\Collection::class, $geonames );
+        $this->assertInstanceOf( Collection::class, $geonames );
         $this->assertGreaterThan( 0, $geonames->count() );
-        $this->assertInstanceOf( \MichaelDrennen\Geonames\Models\Geoname::class, $geonames->first() );
+        $this->assertInstanceOf( Geoname::class, $geonames->first() );
 
         $geonames = $repo->getPlacesStartingWithTerm( 'Ur' );
-        $this->assertInstanceOf( \Illuminate\Support\Collection::class, $geonames );
+        $this->assertInstanceOf( Collection::class, $geonames );
         $this->assertGreaterThan( 0, $geonames->count() );
-        $this->assertInstanceOf( \MichaelDrennen\Geonames\Models\Geoname::class, $geonames->first() );
+        $this->assertInstanceOf( Geoname::class, $geonames->first() );
 
     }
 

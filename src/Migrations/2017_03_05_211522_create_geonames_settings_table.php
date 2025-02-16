@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use MichaelDrennen\Geonames\Models\GeoSetting;
+use Geonames\Models\GeoSetting;
 
 class CreateGeonamesSettingsTable extends Migration {
 

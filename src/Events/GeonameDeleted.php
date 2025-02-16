@@ -1,13 +1,13 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Events;
+namespace Geonames\Events;
 
 use Illuminate\Queue\SerializesModels;
-use MichaelDrennen\Geonames\Models\GeonamesDelete;
+use Geonames\Models\GeonamesDelete;
 
 /**
  * Class GeonameDeleted
- * @package MichaelDrennen\Geonames\Events
+ * @package Geonames\Events
  */
 class GeonameDeleted {
     use SerializesModels;

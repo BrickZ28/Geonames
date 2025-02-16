@@ -1,19 +1,19 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Console;
+namespace Geonames\Console;
 
 use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use MichaelDrennen\Geonames\Models\GeoSetting;
-use MichaelDrennen\Geonames\Models\Log;
-use MichaelDrennen\Geonames\Models\Admin1Code as Admin1CodeModel;
-use MichaelDrennen\LocalFile\LocalFile;
+use Geonames\Models\GeoSetting;
+use Geonames\Models\Log;
+use Geonames\Models\Admin1Code as Admin1CodeModel;
+use LocalFile\LocalFile;
 
 /**
  * Class Admin1Code
- * @package MichaelDrennen\Geonames\Console
+ * @package Geonames\Console
  */
 class Admin1Code extends AbstractCommand {
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Models;
+namespace Geonames\Models;
 
-use MichaelDrennen\Geonames\Console\AlternateName as AlternateNameConsole;
+use Geonames\Console\AlternateName as AlternateNameConsole;
 
 class AlternateNamesWorking extends AlternateName {
 

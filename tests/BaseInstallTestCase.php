@@ -1,6 +1,6 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Tests;
+namespace Geonames\Tests;
 
 abstract class BaseInstallTestCase extends AbstractGlobalTestCase {
 

@@ -1,8 +1,8 @@
 <?php
-namespace MichaelDrennen\Geonames\Repositories;
+namespace Geonames\Repositories;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use MichaelDrennen\Geonames\Models\Admin2Code;
+use Geonames\Models\Admin2Code;
 
 
 class Admin2CodeRepository {

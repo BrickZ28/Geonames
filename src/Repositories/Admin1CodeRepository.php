@@ -1,10 +1,10 @@
 <?php
 
-namespace MichaelDrennen\Geonames\Repositories;
+namespace Geonames\Repositories;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Collection;
-use MichaelDrennen\Geonames\Models\Admin1Code;
+use Geonames\Models\Admin1Code;
 
 
 class Admin1CodeRepository {
